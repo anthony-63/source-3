@@ -1,7 +1,8 @@
 #include "agt_callback.h"
 #include "agt_dev_console.h"
 #include "agt_input.h"
-
+#include "agt_gvars.h"
+extern AGT_gvars* gvars;
 extern int _g_show_cons;
 void cleanup(AGT_Window* win) {
     SDL_DestroyWindow(win->agt_win);
@@ -13,7 +14,7 @@ void cleanup(AGT_Window* win) {
 }
 
 void draw(AGT_Window* win) {
-    SDL_FillRect(win->agt_win_surf, NULL, 0x808080);
+    SDL_FillRect(win->agt_win_surf, NULL, agt_gvar_access(gvars, "bg.color"));
 }
 
 

@@ -8,12 +8,10 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Aug 06 01:25:20 2022
+# Make data base, printed on Sat Aug 06 03:24:08 2022
 
 # Variables
 
-# environment
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -27,7 +25,7 @@ USERPROFILE = C:\Users\jsef5
 # environment
 LOCALAPPDATA = C:\Users\jsef5\AppData\Local
 # environment
-VSCODE_CWD = C:\Users\jsef5\Documents\Code\C\a game thing
+VSCODE_CWD = C:\Users\jsef5\AppData\Local\Programs\Microsoft VS Code
 # environment
 SYSTEMROOT = C:\Windows
 # environment
@@ -39,9 +37,7 @@ MAKE_COMMAND := make.exe
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_19288_PUVDUMJOKBEVVJGP
-# environment
-FPS_BROWSER_USER_PROFILE_STRING = Default
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_13712_DVPHFMQMFZUIHWDD
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -53,7 +49,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\jsef5\AppData\Roaming\Code\CachedData\3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = C:\Users\jsef5\AppData\Roaming\Code\CachedData\da76f93349a72022ca4670c1b84860304616aaa2
 # environment
 LANG = C
 # default
@@ -85,7 +81,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 19288
+VSCODE_PID = 13712
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -149,7 +145,7 @@ GNUMAKEFLAGS :=
 # environment
 OS = Windows_NT
 # makefile
-.DEFAULT_GOAL := bin\a_game_thing.exe
+.DEFAULT_GOAL := source3.exe
 # default
 MAKE_VERSION := 4.3
 # environment
@@ -175,23 +171,19 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = C:\Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\5115a421af19a73b8efb592ebba8e212-1.69.2-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\5115a421af19a73b8efb592ebba8e212-1.70.0-main-sock
 # default
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
 # makefile (from 'Makefile', line 1)
-OUT = bin\a_game_thing.exe
+OUT = source3.exe
 # default
 SUFFIXES := 
 # environment
 ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
-# environment
-VSCODE_CLI = 1
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
@@ -199,7 +191,7 @@ PROCESSOR_REVISION = 1801
 # environment
 PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
 # variable set hash-table stats:
-# Load=93/1024=9%, Rehash=0, Collisions=10/123=8%
+# Load=89/1024=9%, Rehash=0, Collisions=9/119=8%
 
 # Pattern-specific Variable Values
 
@@ -208,9 +200,9 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
 # Directories
 
 # src (key c:/Users/jsef5/Documents/Code/C/a game thing/src, mtime 1659762335): 15 files, no impossibilities.
-# . (key c:/Users/jsef5/Documents/Code/C/a game thing, mtime 1659759103): 8 files, no impossibilities.
+# . (key c:/Users/jsef5/Documents/Code/C/a game thing, mtime 1659770616): 9 files, no impossibilities.
 
-# 23 files, no impossibilities in 2 directories.
+# 24 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -227,7 +219,7 @@ src/agt_window.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-06 01:25:18
+#  Last modified 2022-08-06 03:24:07
 #  File has been updated.
 #  Successfully updated.
 
@@ -268,7 +260,7 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-run: bin\a_game_thing.exe
+run: source3.exe
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -276,18 +268,18 @@ run: bin\a_game_thing.exe
 	.\$(OUT)
 	del .\$(OUT)
 
-bin\a_game_thing.exe: src/agt_callback.c src/agt_dev_console.c src/agt_input.c src/agt_log_stack.c src/agt_logging.c src/agt_window.c src/main.c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 5):
-	gcc $(SRC) -o $(OUT) -lSDL2 -lSDL2_ttf
-
 # Not a target:
 src/agt_callback.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+source3.exe: src/agt_callback.c src/agt_dev_console.c src/agt_input.c src/agt_log_stack.c src/agt_logging.c src/agt_window.c src/main.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 5):
+	gcc $(SRC) -o $(OUT) -lSDL2 -lSDL2_ttf
 
 # Not a target:
 src/agt_log_stack.c:
@@ -303,12 +295,12 @@ src/agt_log_stack.c:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 394 B / avg = 11 B
-# current buf: size = 8162 B / used = 394 B / count = 33 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 34 / storage = 396 B / avg = 11 B
+# current buf: size = 8162 B / used = 396 B / count = 34 / avg = 11 B
 
-# strcache performance: lookups = 43 / hit rate = 23%
+# strcache performance: lookups = 44 / hit rate = 22%
 # hash-table stats:
-# Load=33/8192=0%, Rehash=0, Collisions=0/43=0%
-# Finished Make data base on Sat Aug 06 01:25:20 2022
+# Load=34/8192=0%, Rehash=0, Collisions=0/44=0%
+# Finished Make data base on Sat Aug 06 03:24:08 2022
 
  

@@ -37,7 +37,19 @@ void agt_input_handler(SDL_Event ev) {
                 case SDLK_w: _g_cons_inp_text[inp_loc++] = 'w';break;
                 case SDLK_x: _g_cons_inp_text[inp_loc++] = 'x';break;
                 case SDLK_y: _g_cons_inp_text[inp_loc++] = 'y';break;
-                case SDLK_z: _g_cons_inp_text[inp_loc++] = 'z';break;
+                case SDLK_0: _g_cons_inp_text[inp_loc++] = '0';break;
+                case SDLK_1: _g_cons_inp_text[inp_loc++] = '1';break;
+                case SDLK_2: _g_cons_inp_text[inp_loc++] = '2';break;
+                case SDLK_3: _g_cons_inp_text[inp_loc++] = '3';break;
+                case SDLK_4: _g_cons_inp_text[inp_loc++] = '4';break;
+                case SDLK_5: _g_cons_inp_text[inp_loc++] = '5';break;
+                case SDLK_6: _g_cons_inp_text[inp_loc++] = '6';break;
+                case SDLK_7: _g_cons_inp_text[inp_loc++] = '7';break;
+                case SDLK_8: _g_cons_inp_text[inp_loc++] = '8';break;
+                case SDLK_9: _g_cons_inp_text[inp_loc++] = '9';break;
+                case SDLK_PERIOD: _g_cons_inp_text[inp_loc++] = '.';break;
+                case SDLK_UNDERSCORE: _g_cons_inp_text[inp_loc++] = '_';break;
+
                 case SDLK_SPACE: _g_cons_inp_text[inp_loc++] = ' ';break;
                 case SDLK_BACKSPACE: {
                     if(inp_loc != 0) _g_cons_inp_text[--inp_loc] = ' ';

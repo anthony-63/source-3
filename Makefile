@@ -1,4 +1,4 @@
-OUT = bin\a_game_thing.exe
+OUT = source3.exe
 SRC = src/*.c
 
 $(OUT): $(SRC)
