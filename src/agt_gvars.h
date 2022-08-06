@@ -2,8 +2,7 @@
 
 #include <string.h>
 
-#define GVAR_COUNT 2
-
+#define GVAR_COUNT 1
 typedef struct AGT_gvars AGT_gvars;
     
 typedef struct AGT_gvars {

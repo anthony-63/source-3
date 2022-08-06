@@ -22,7 +22,7 @@ void slice(const char *str, char *result, size_t start, size_t end){
 }
 
 void agt_setup_dev_console() {
-    font = TTF_OpenFont("fonts/font.ttf", 16);
+    font = TTF_OpenFont("fonts/font1.ttf", 16);
     if(font == NULL) {
         printf("[ERROR] Failed to load font from fonts/font.ttf\n");
     }
@@ -31,10 +31,9 @@ void agt_setup_dev_console() {
     memset(_g_cons_inp_text, 0, sizeof(char) * 4096);
 }
 
-// should not need to pass in as a pointer but i want to do more evil memory stuff
 void agt_draw_dev_console(AGT_Window* win, SDL_Event ev) {
     if(!_g_show_cons) return;
-    SDL_Surface *inp_text_surf = TTF_RenderText_Solid(font, _g_cons_inp_text, txt_color);
+    SDL_Surface *inp_text_surf = TTF_RenderText_Blended(font, _g_cons_inp_text, txt_color);
     
     if(_g_enter_cmd){
         _g_enter_cmd = 0;
@@ -42,9 +41,11 @@ void agt_draw_dev_console(AGT_Window* win, SDL_Event ev) {
             memset(_g_cons_dat_text, 0, sizeof(_g_cons_dat_text));
             cons_dat_curr_idx = 0;
         }
-        _g_cons_dat_text[cons_dat_curr_idx++] = TTF_RenderText_Solid(font, _g_cons_inp_text, txt_dat_color);
+        char dat_msg[128];
+        sprintf(dat_msg, "> %s", _g_cons_inp_text);
+        _g_cons_dat_text[cons_dat_curr_idx++] = TTF_RenderText_Blended(font, dat_msg, txt_dat_color);
 
-        // this is insanely terrible, but i dont care it works.
+        // this is insanely terrible, but i dont care, it works.
         char cmd_buf[5];
         slice(_g_cons_inp_text, cmd_buf, 0, 4);
         cmd_buf[5] = '\0';
@@ -62,9 +63,8 @@ void agt_draw_dev_console(AGT_Window* win, SDL_Event ev) {
                 int bg_amm = strtol(bg_str_amm, NULL, 16);
                 agt_gvar_set(gvars, arg_buf, bg_amm);
                 char dbg_msg[128];
-                sprintf(dbg_msg, "Set background color to %06X", bg_amm);
-                _g_cons_dat_text[cons_dat_curr_idx++] = TTF_RenderText_Solid(font, dbg_msg, txt_dat_color);
-
+                sprintf(dbg_msg, "] Set background color to %06X", bg_amm);
+                _g_cons_dat_text[cons_dat_curr_idx++] = TTF_RenderText_Blended(font, dbg_msg, txt_dat_color);
             }
         }
 

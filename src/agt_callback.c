@@ -27,6 +27,7 @@ void agt_win_callback(AGT_Window* win) {
                 case SDL_QUIT: cleanup(win); break;
                 case SDL_KEYDOWN:
                     agt_input_handler(ev);
+                break;
                 default: break;
             }
         }
