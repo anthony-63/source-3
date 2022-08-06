@@ -1,0 +1,18 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "files.associations": {
+        "agt_callback.h": "c",
+        "agt_window.h": "c",
+        "stdarg.h": "c",
+        "agt_dev_console.h": "c",
+        "sdl.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "c:\\Users\\jsef5\\Documents\\Code\\C\\a game thing\\bin",
+            "binaryPath": "c:\\Users\\jsef5\\Documents\\Code\\C\\a game thing\\bin\\a_game_thing.exe",
+            "binaryArgs": []
+        }
+    ]
+}

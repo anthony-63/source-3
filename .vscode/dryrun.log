@@ -1,0 +1,5 @@
+make.exe --dry-run --keep-going --print-directory
+make: Entering directory 'c:/Users/jsef5/Documents/Code/C/a game thing'
+gcc src/*.c -o bin\a_game_thing.exe -lSDL2 -lSDL2_ttf
+make: Leaving directory 'c:/Users/jsef5/Documents/Code/C/a game thing'
+ 
