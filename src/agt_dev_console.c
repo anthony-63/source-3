@@ -7,6 +7,7 @@
 #include <string.h>
 
 #define DEV_CONSOLE_LINES_AMOUNT 16
+
 TTF_Font* font = NULL;
 SDL_Color txt_color = {0, 0, 0};
 SDL_Color txt_dat_color = {230, 230, 230};
@@ -71,6 +72,7 @@ void agt_draw_dev_console(AGT_Window* win, SDL_Event ev) {
         memset(_g_cons_inp_text, 0, sizeof(char) * 4096);
     }
     
+    // repeating code is fine, as long as it works ;)
     SDL_Rect console_border_rect = {20, 0, win->w - 40, win->h - 200};
     SDL_Rect text_input_rect =     {40, win->h - 245, win->w - 80, 30};
     SDL_Rect console_data_rect =   {40, 10, win->w - 80, win->h - 270};
@@ -83,4 +85,5 @@ void agt_draw_dev_console(AGT_Window* win, SDL_Event ev) {
         SDL_Rect dat_rect = {console_data_rect.x + 5, console_data_rect.y + 5 + (i * 20)};
         SDL_UpperBlit(_g_cons_dat_text[i], NULL, win->agt_win_surf, &dat_rect);
     }
+
 }

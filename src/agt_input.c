@@ -5,12 +5,17 @@ extern char *_g_cons_inp_text;
 char** org_inp_addr = &_g_cons_inp_text;
 int inp_loc = 0;
 int _g_enter_cmd = 0;
+#define INP_CHAR_MAX 140
 void agt_input_handler(SDL_Event ev) {
     if(ev.type == SDL_KEYDOWN) {
         switch(ev.key.keysym.sym) {
             case SDLK_INSERT: _g_show_cons = !_g_show_cons;SDL_StartTextInput();break;
         }
         if(_g_show_cons) {
+            if(inp_loc >= INP_CHAR_MAX) {
+                memset(_g_cons_inp_text, 0, sizeof(char) * 4096);
+                inp_loc = 0;
+            }
             switch(ev.key.keysym.sym){
                 case SDLK_a: _g_cons_inp_text[inp_loc++] = 'a';break;
                 case SDLK_b: _g_cons_inp_text[inp_loc++] = 'b';break;
@@ -47,9 +52,21 @@ void agt_input_handler(SDL_Event ev) {
                 case SDLK_7: _g_cons_inp_text[inp_loc++] = '7';break;
                 case SDLK_8: _g_cons_inp_text[inp_loc++] = '8';break;
                 case SDLK_9: _g_cons_inp_text[inp_loc++] = '9';break;
+                case SDLK_EXCLAIM: _g_cons_inp_text[inp_loc++] = '!';break;
+                case SDLK_AT: _g_cons_inp_text[inp_loc++] = '@';break;
+                case SDLK_HASH: _g_cons_inp_text[inp_loc++] = '#';break;
+                case SDLK_DOLLAR: _g_cons_inp_text[inp_loc++] = '$';break;
+                case SDLK_PERCENT: _g_cons_inp_text[inp_loc++] = '%';break;
+                case SDLK_POWER: _g_cons_inp_text[inp_loc++] = '^';break;
+                case SDLK_AMPERSAND: _g_cons_inp_text[inp_loc++] = '&';break;
+                case SDLK_ASTERISK: _g_cons_inp_text[inp_loc++] = '*';break;
+                case SDLK_RIGHTPAREN: _g_cons_inp_text[inp_loc++] = '(';break;
+                case SDLK_LEFTPAREN: _g_cons_inp_text[inp_loc++] = ')';break;
+                case SDLK_MINUS: _g_cons_inp_text[inp_loc++] = '-';break;
+                case SDLK_EQUALS: _g_cons_inp_text[inp_loc++] = '=';break;
+                case SDLK_PLUS: _g_cons_inp_text[inp_loc++] = '+';break;
                 case SDLK_PERIOD: _g_cons_inp_text[inp_loc++] = '.';break;
                 case SDLK_UNDERSCORE: _g_cons_inp_text[inp_loc++] = '_';break;
-
                 case SDLK_SPACE: _g_cons_inp_text[inp_loc++] = ' ';break;
                 case SDLK_BACKSPACE: {
                     if(inp_loc != 0) _g_cons_inp_text[--inp_loc] = ' ';
